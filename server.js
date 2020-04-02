@@ -9,8 +9,11 @@
 
 // Requiring necessary npm packages:
 const express = require('express');
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 
 // Requiring express-handlebars:
 const exphbs = require('express-handlebars');
+// Requiring ORM:
+const orm = require("./config/orm.js");
+const db = require('./models');
