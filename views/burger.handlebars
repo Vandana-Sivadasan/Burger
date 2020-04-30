@@ -1,10 +1,12 @@
 <h1><i class="fas fa-hamburger"></i></h1>
-<input class="form-control" type="text" readonly>
-<form>
-    <br>
-    <div class="form-group row">
-        <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </div>
+<form action="/burger" method="POST">
+    <input class="form-control" type="text" name="burger_name" value="" id="burger-input">
+
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<div>
+    {{#each burger_data}}
+        <h1>{{this.burger_name}}</h1>
+    {{/each}}
+</div>
