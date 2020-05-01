@@ -1,12 +1,24 @@
 <h1><i class="fas fa-hamburger"></i></h1>
 <form action="/burger" method="POST">
     <input class="form-control" type="text" name="burger_name" value="" id="burger-input">
-
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-<div>
+<div class="row">
+<div class="col-sm-6">
     {{#each burger_data}}
-        <h1>{{this.burger_name}}</h1>
+        {{#unless this.devoured}}
+            <h1>{{this.burger_name}}</h1>
+            <button class="devour-burger" value={{this.id}}>Devour It!</button>
+        {{/unless}}
     {{/each}}
+</div>
+
+<div class="col-sm-6">
+    {{#each burger_data}}
+        {{#if this.devoured}}
+            <h1>{{this.burger_name}}</h1>
+        {{/if}}
+    {{/each}}
+</div>
 </div>

@@ -26,6 +26,17 @@ router.post("/burger", function (req, res) {
 
 });
 
+router.put("/burger/:id", function (req, res) {
+  console.log("Burger PUT route hit");
+  console.log(req.body)
+  //Create burger update method
 
+  burger.update(req.params.id, function(result) {
+    console.log(result);
+    res.sendStatus(200);
+
+  })
+
+});
 
 module.exports = router;
